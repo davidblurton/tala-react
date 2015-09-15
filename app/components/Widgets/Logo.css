@@ -1,0 +1,16 @@
+.root {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.root a {
+  text-decoration: none;
+  color: $black;
+}
+
+.root em {
+  font-style: normal;
+  color: $blue
+}

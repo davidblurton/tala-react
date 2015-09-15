@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: color($black a(80%));
-  font-family: helvetica, arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
   line-height: 1.4;
   text-rendering: optimizeLegibility;
   text-size-adjust: none;
@@ -19,5 +19,17 @@ a {
 }
 
 .root {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
 
+  /* sticky footer */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
 }

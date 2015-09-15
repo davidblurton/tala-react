@@ -1,48 +1,14 @@
-.root {
-  margin: 0 0 10px 0;
-}
-
 .input {
+  -webkit-appearance: none;
+  background-color: transparent;
   border: none;
-  background-color: $grey;
-  border-radius: 6px;
+  border-bottom: 1px solid $border;
+  border-radius: 0;
   color: $black;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 24px;
-  padding: 8px 12px;
-  width: 100%;
-  margin-bottom: 8px;
-  transition: background-color 200ms;
-}
-
-.input:focus {
+  font-family: inherit;
+  font-size: 32px;
   outline: none;
-  background-color: color($grey a(70%));
-}
-
-.input:focus::placeholder {
-  color: $black30;
-}
-
-.input::placeholder {
-  font-weight: 700;
-  color: $black20;
-}
-
-.error {
-  border: 3px solid red;
-  border-width: 0 10px 0 0;
-  transition: border 100ms ease 2s;
-}
-
-.errorMessage {
-  margin: 5px 0 10px 0;
-  font-weight: 600;
-  font-size: 13px;
-  color: red;
-}
-
-.required {
-
+  padding-bottom: 5px;
+  transition: color 200ms, border-color 200ms;
+  width: 100%;
 }

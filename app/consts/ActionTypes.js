@@ -1,11 +1,7 @@
 import keyMirror from 'keymirror'
 
 export default {
-  User: keyMirror({
-    getCurrentUser: null,
-  }),
-
-  Users: keyMirror({
-    listUsers: null,
-  }),
+  Sentence: keyMirror({
+    getSuggestions: null,
+  })
 }

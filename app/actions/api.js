@@ -1,12 +1,13 @@
 import axios from 'axios'
 import ActionTypes from '../consts/ActionTypes'
 
+const apiUrl = 'https://api.tala.is'
+
 function request(method, url, data) {
-  const id = uuid()
   const config = {
     method,
     data,
-    url: `/api${url}`,
+    url: `${apiUrl}/${url}`,
   }
 
   return axios(config)

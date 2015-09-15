@@ -1,0 +1,10 @@
+.root {
+  margin: 60px 0;
+  color: $black20;
+  text-align: center;
+}
+
+.root a {
+  color: $black20;
+  border-bottom: 1px dotted $border;
+}

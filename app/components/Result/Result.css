@@ -1,0 +1,50 @@
+.root {
+  margin: 30px 0;
+}
+
+.words {
+  display: flex;
+}
+
+.word {
+  font-size: 72px;
+  margin-right: 20px;
+}
+
+.unit {
+  position: relative;
+}
+
+.correction {
+  color: $blue;
+}
+
+.explanation {
+  position: absolute;
+  margin-top: 10px;
+  padding-top: 20px;
+  border-top: 1px solid $border;
+  left: -50%;
+  right: 50%;
+}
+
+.explanation::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: 10px;
+  right: 0;
+  border-left: 1px solid $border;
+  border-right: 1px solid $border;
+}
+
+.rule {
+  font-size: 13px;
+  color: $black50;
+  text-align: center;
+}
+
+.rule p {
+  margin-bottom: 0.5em;
+}
