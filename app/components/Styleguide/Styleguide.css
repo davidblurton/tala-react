@@ -1,0 +1,38 @@
+.root {
+  margin: 50px;
+  width: 100%;
+}
+
+.root :global h3,
+.root :global h4 {
+  margin-bottom: 20px;
+}
+
+.root :global h4 {
+  font-weight: normal;
+}
+
+.group {
+  margin: 20px 0 60px 0;
+}
+
+.widget {
+  flex-flow: row wrap;
+  display: flex;
+  margin: 20px 0;
+}
+
+.result {
+  flex: 1 40%;
+  padding: 0 20px;
+}
+
+.definition {
+  flex: 1 60%;
+  padding: 0 20px;
+  align-self: center;
+}
+
+:global pre {
+  overflow-y: auto;
+}

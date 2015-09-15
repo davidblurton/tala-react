@@ -1,0 +1,30 @@
+.root {
+  background: $blue;
+  border-radius: 5px;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 150%;
+  padding: 10px 20px;
+  transition: background 200ms;
+  margin: 10px 0;
+}
+
+.root:hover {
+  background: color($blue lightness(-5%));
+}
+
+.root:focus {
+  outline: none;
+}
+
+.root[disabled] {
+  background: $black20;
+  cursor: not-allowed;
+}
+
+.block {
+  width: 100%;
+}

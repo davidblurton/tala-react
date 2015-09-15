@@ -1,0 +1,46 @@
+.root {
+  min-height: 120px;
+}
+
+.staticText {
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+  margin-bottom: 12px;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.maxLength {
+  bottom: 100%;
+  color: $black40;
+  padding-bottom: 6px;
+  position: absolute;
+  right: 0;
+}
+
+.small {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.textarea {
+  appearance: none;
+  background: $grey;
+  border: none;
+  border-radius: 6px;
+  display: block;
+  font-size: inherit;
+  min-height: 6em;
+  line-height: inherit;
+  outline: none;
+  padding: 12px;
+  width: 100%;
+  max-width: 100%;
+}

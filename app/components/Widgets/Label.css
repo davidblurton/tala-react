@@ -1,0 +1,8 @@
+.root {
+  display: block;
+  color: $black;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+  min-height: 24px;
+}
