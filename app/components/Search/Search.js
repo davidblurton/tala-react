@@ -23,7 +23,22 @@ export default class Search extends React.Component {
     e.preventDefault()
 
     let query = this.state.query
+    window.history.pushState({query}, null, `${window.origin}${window.pathname}?q=${query}`);
+
     this.props.dispatch(SentenceActionCreators.getSuggestions(query))
+  }
+
+  getSearchFromUrl() {
+    let query = decodeURI(window.location.search).match(/q=([^&]*)/)
+
+    if (query) {
+      this.setState({query: query[1]})
+      this.props.dispatch(SentenceActionCreators.getSuggestions(query[1]))
+    }
+  }
+
+  componentWillMount() {
+    this.getSearchFromUrl()
   }
 
   render() {
