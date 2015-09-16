@@ -11,4 +11,5 @@
   padding-bottom: 5px;
   transition: color 200ms, border-color 200ms;
   width: 100%;
+  max-width: 600px;
 }

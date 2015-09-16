@@ -1,5 +1,5 @@
 .root {
-  margin: 30px 0;
+  margin: 30px auto;
 }
 
 .words {
@@ -47,4 +47,8 @@
 
 .rule p {
   margin-bottom: 0.5em;
+}
+
+.correction .rule {
+  color: $blue;
 }

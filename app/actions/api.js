@@ -2,6 +2,7 @@ import axios from 'axios'
 import ActionTypes from '../consts/ActionTypes'
 
 const apiUrl = 'https://api.tala.is'
+// const apiUrl = 'http://localhost:8000'
 
 function request(method, url, data) {
   const config = {
