@@ -6,8 +6,6 @@ var brand = require('./app/consts/brand');
 
 var cssModulesLoader = 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
 
-var outputDir = path.join(__dirname, 'build')
-
 module.exports = {
   entry: {
     javascript: './app/index.js',
@@ -16,7 +14,8 @@ module.exports = {
 
   output: {
     filename: '[name].[chunkhash].js',
-    path: outputDir,
+    path: path.join(__dirname, 'build', 'assets'),
+    publicPath: '/assets',
     devtool: 'source-map'
   },
 
@@ -52,7 +51,7 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin({title: 'tala.is'}),
+    new HtmlWebpackPlugin({title: 'tala.is', filename: '../index.html'}),
     new ExtractTextPlugin('styles.[chunkhash].css', { allChunks: true }),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.[chunkhash].js'),
     new webpack.optimize.UglifyJsPlugin(),
