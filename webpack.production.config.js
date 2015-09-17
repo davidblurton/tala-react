@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 var brand = require('./app/consts/brand');
 
 var cssModulesLoader = 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader'
@@ -10,11 +11,11 @@ var outputDir = path.join(__dirname, 'build')
 module.exports = {
   entry: {
     javascript: './app/index.js',
-    html: './app/index.html'
+    vendors: ['react', 'react-dom']
   },
 
   output: {
-    filename: 'bundle.js', //`[name]${production ? '.[chunkhash]' : ''}.js`,
+    filename: '[name].[chunkhash].js',
     path: outputDir,
     devtool: 'source-map'
   },
@@ -35,10 +36,6 @@ module.exports = {
       {
         test: /\.json$/,
         loader: 'json-loader'
-      },
-      {
-        test: /\.html$/,
-        loader: 'file?name=[name].[ext]'
       }
     ]
   },
@@ -55,7 +52,9 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('styles.css', { allChunks: true }),
+    new HtmlWebpackPlugin({title: 'tala.is'}),
+    new ExtractTextPlugin('styles.[chunkhash].css', { allChunks: true }),
+    new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.[chunkhash].js'),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.IgnorePlugin(/\.json$/)
   ]

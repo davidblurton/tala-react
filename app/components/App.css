@@ -5,6 +5,7 @@
 }
 
 body {
+  @import url(https://fonts.googleapis.com/css?family=Roboto+Slab);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: color($black a(80%));

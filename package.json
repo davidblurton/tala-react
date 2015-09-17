@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Starter for React with Redux",
   "scripts": {
-    "build": "webpack --config webpack.production.config",
+    "build": "rm -rf build && webpack --config webpack.production.config",
     "lint": "eslint app; exit 0;",
     "start": "webpack-dev-server --devtool source-map --content-base build/ --hot",
     "deploy": "./deploy.sh"
@@ -33,6 +33,7 @@
     "file-loader": "0.8.4",
     "formsy-react": "0.15.1",
     "history": "^1.8.4",
+    "html-webpack-plugin": "^1.6.1",
     "immu": "1.2.2",
     "keymirror": "0.1.1",
     "loader-utils": "0.2.11",
