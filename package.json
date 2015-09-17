@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Starter for React with Redux",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack --config webpack.production.config",
     "lint": "eslint app; exit 0;",
-    "start": "webpack-dev-server --devtool source-map --content-base build/ --hot"
+    "start": "webpack-dev-server --devtool source-map --content-base build/ --hot",
+    "deploy": "./deploy.sh"
   },
   "repository": {
     "type": "git",

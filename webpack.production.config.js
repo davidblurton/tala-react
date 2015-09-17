@@ -9,12 +9,12 @@ var outputDir = path.join(__dirname, 'build')
 
 module.exports = {
   entry: {
-    javascript: ['webpack/hot/dev-server', 'webpack-dev-server/client?http://localhost:8080', './app/index.js'],
+    javascript: './app/index.js',
     html: './app/index.html'
   },
 
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.js', //`[name]${production ? '.[chunkhash]' : ''}.js`,
     path: outputDir,
     devtool: 'source-map'
   },
@@ -23,11 +23,11 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['react-hot', 'babel-loader?stage=0&optional=runtime'],
+        loader: 'babel-loader?stage=0&optional=runtime',
         exclude: /node_modules/
       }, {
         test: /\.css$/,
-        loader: 'style-loader!' + cssModulesLoader
+        loader: ExtractTextPlugin.extract('style-loader', cssModulesLoader)
       }, {
         test: /\.svg$/,
         loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
@@ -55,6 +55,8 @@ module.exports = {
   },
 
   plugins: [
+    new ExtractTextPlugin('styles.css', { allChunks: true }),
+    new webpack.optimize.UglifyJsPlugin(),
     new webpack.IgnorePlugin(/\.json$/)
   ]
 };
