@@ -31,11 +31,12 @@ export default class Result extends React.Component {
         <div className={styles.words}>
           {sentence.tokenized.map((word, index) => {
             let rule = sentence.rules.filter(x => x.targetIndex === index)[0]
+            let unrecognized = !sentence.recognized[index] && !rule.replacements[0]
 
             let wordClasses = classNames({
               [styles.word]: true,
               [styles.correction]: rule && !rule.isCorrect,
-              [styles.unrecognized]: !sentence.recognized[index]
+              [styles.unrecognized]: unrecognized
             })
 
             let display = rule && rule.replacements[0] || word
@@ -43,7 +44,7 @@ export default class Result extends React.Component {
             return (
               <div key={index} className={styles.unit}>
                 <div className={wordClasses}>{display}</div>
-                { rule && sentence.recognized[rule.targetIndex] ? (
+                { rule && !unrecognized ? (
                   <div className={styles.explanation} style={{
                     left: -(wordWidths[rule.modifierIndex] / 2 + wordWidths.slice(rule.modifierIndex + 1, rule.targetIndex).reduce((x, y) => x + y, 0)),
                     right: wordWidths[rule.targetIndex] / 2 + 10}}>
@@ -53,7 +54,7 @@ export default class Result extends React.Component {
                     </div>
                   </div>
                 ) : null }
-                { sentence.recognized[index] ? null : <div className={styles.unrecognizedWord}>Unknown word</div> }
+                { unrecognized ? <div className={styles.unrecognizedWord}>Unknown word</div> : null }
               </div>
             )
           })}
