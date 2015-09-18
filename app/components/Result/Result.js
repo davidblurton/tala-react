@@ -35,6 +35,7 @@ export default class Result extends React.Component {
             let wordClasses = classNames({
               [styles.word]: true,
               [styles.correction]: rule && !rule.isCorrect,
+              [styles.unrecognized]: !sentence.recognized[index]
             })
 
             let display = rule && rule.replacements[0] || word
@@ -42,7 +43,7 @@ export default class Result extends React.Component {
             return (
               <div key={index} className={styles.unit}>
                 <div className={wordClasses}>{display}</div>
-                { rule ? (
+                { rule && sentence.recognized[rule.targetIndex] ? (
                   <div className={styles.explanation} style={{
                     left: -(wordWidths[rule.modifierIndex] / 2 + wordWidths.slice(rule.modifierIndex + 1, rule.targetIndex).reduce((x, y) => x + y, 0)),
                     right: wordWidths[rule.targetIndex] / 2 + 10}}>
@@ -52,6 +53,7 @@ export default class Result extends React.Component {
                     </div>
                   </div>
                 ) : null }
+                { sentence.recognized[index] ? null : <div className={styles.unrecognizedWord}>Unknown word</div> }
               </div>
             )
           })}

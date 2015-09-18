@@ -19,6 +19,10 @@
   color: $blue;
 }
 
+.unrecognized {
+  color: $black50;
+}
+
 .explanation {
   position: absolute;
   margin-top: 10px;
@@ -39,7 +43,7 @@
   border-right: 1px solid $border;
 }
 
-.rule {
+.rule, .unrecognizedWord {
   font-size: 13px;
   color: $black50;
   text-align: center;
@@ -51,4 +55,8 @@
 
 .correction .rule {
   color: $blue;
+}
+
+.unrecognizedWord {
+  margin-right: 20px;
 }
