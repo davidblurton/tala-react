@@ -39,7 +39,7 @@ export default class Result extends React.Component {
               [styles.unrecognized]: unrecognized
             })
 
-            let display = rule && rule.replacements[0] || word
+            let display = rule && !rule.isCorrect ? rule.replacements[0] : word
 
             return (
               <div key={index} className={styles.unit}>
