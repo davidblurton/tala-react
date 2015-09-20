@@ -1,7 +1,7 @@
 import React, {PropTypes} from 'react'
 import styles from './TextInput.css'
 
-export default ({value, placeholder, onChange}) => (
+export default ({value, placeholder, onChange, autoFocus}) => (
   <span className={styles.root}>
     <input
       type='text'
@@ -9,6 +9,7 @@ export default ({value, placeholder, onChange}) => (
       onChange={onChange}
       value={value}
       className={styles.input}
+      autoFocus={autoFocus}
     />
   </span>
 )

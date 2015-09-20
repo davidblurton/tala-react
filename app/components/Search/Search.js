@@ -44,7 +44,7 @@ export default class Search extends React.Component {
   render() {
     return (
       <form onSubmit={::this.onSubmit}>
-        <TextInput value={this.state.query} onChange={::this.onChange} />
+        <TextInput value={this.state.query} onChange={::this.onChange} autoFocus placeholder="ég tala ekki íslenska" />
       </form>
     )
   }
