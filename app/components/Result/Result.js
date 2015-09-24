@@ -3,12 +3,12 @@ import classNames from 'classnames'
 import {connect} from 'react-redux'
 import styles from './Result.css'
 
-let canvas = document.createElement("canvas")
+let canvas = document.createElement('canvas')
 const wordMargin = 20
 
 function measureText(text) {
     // re-use canvas object for better performance
-  var context = canvas.getContext("2d")
+  var context = canvas.getContext('2d')
   context.font = '72px helvetica, arial, sans-serif'
   var metrics = context.measureText(text)
   return metrics.width + wordMargin

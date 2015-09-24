@@ -23,7 +23,7 @@ export default class Search extends React.Component {
     e.preventDefault()
 
     let query = this.state.query
-    window.history.pushState({query}, null, `?q=${query}`);
+    window.history.pushState({query}, null, `?q=${query}`)
 
     this.props.dispatch(SentenceActionCreators.getSuggestions(query))
   }

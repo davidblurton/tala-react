@@ -10,11 +10,11 @@ import promiseMiddleware from './lib/promiseMiddleware'
 
 const reducer = combineReducers({
   ...reducers
-});
+})
 
 const store = compose(
   applyMiddleware(promiseMiddleware),
-)(createStore)(reducer);
+)(createStore)(reducer)
 
 class Root extends Component {
   render() {
@@ -24,11 +24,11 @@ class Root extends Component {
           <App />
         </Provider>
       </div>
-    );
+    )
   }
 }
 
-let outlet = document.createElement("div")
+let outlet = document.createElement('div')
 document.body.appendChild(outlet)
 
-ReactDOM.render(<Root />, outlet);
+ReactDOM.render(<Root />, outlet)
