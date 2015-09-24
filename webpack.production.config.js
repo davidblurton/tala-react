@@ -47,12 +47,18 @@ module.exports = {
   ],
 
   resolve: {
-    modulesDirectories: ['node_modules', 'app']
+    modulesDirectories: ['node_modules', 'app'],
+    alias: {
+      'react': 'react/dist/react.min.js',
+      'react-dom': 'react/dist/react-dom.min.js',
+      'axios': 'axios/dist/axios.min.js'
+    }
   },
 
   plugins: [
     new HtmlWebpackPlugin({title: 'tala.is', filename: '../index.html'}),
     new ExtractTextPlugin('styles.[chunkhash].css', { allChunks: true }),
+    new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.[chunkhash].js'),
     new webpack.optimize.UglifyJsPlugin(),
     new webpack.IgnorePlugin(/\.json$/)
